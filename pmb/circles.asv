@@ -1,0 +1,20 @@
+clear
+clc
+
+% Parameters
+r = 25;
+th = 5*pi/3;
+dp = 1e-3;
+
+m = sin(th)/cos(th);
+
+icpt = roots([(m^2)+1 -2*dp -((r^2)+dp)])
+
+if th < pi
+    x_icpt = icpt(1)
+else
+    x_icpt = icpt(2)
+end
+
+y_icpt = sqrt((r^2)-(x_icpt-dp)^2)
+
